@@ -23,6 +23,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Copy folder content from remote
-        run: scp -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@18.219.65.137:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
+        run: scp ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@18.219.65.137:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
        
        
