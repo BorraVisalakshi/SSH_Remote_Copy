@@ -17,11 +17,26 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access itt
-      - name: Checkout the code
-        uses: actions/checkout@v2
-    #Coping from remote to local    
-      - name: Copy from remote to local 
-        run: scp -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@3.140.249.25:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
-       
-    
-       
+    - name: Checkout the code
+      uses: actions/checkout@v2
+      
+    - name: Operations
+      uses: alinz/ssh-scp-action@master
+      with:
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        host: 3.140.249.25
+        port: 22
+        user: ec2-user
+        # runs this on remove server
+        ssh_before: |
+         sudo su;
+
+        # then downloads these 2 files
+        scp: |
+         scp -i C:\Users\trbor\Downloads\POC_AWS.pem ec2-user@3.140.249.25:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar C:\Users\trbor\Downloads\
+
+        # then run these commands
+        ssh_after: |
+          echo $HELLO
+          echo $MESSAGE
+          ls -lath
