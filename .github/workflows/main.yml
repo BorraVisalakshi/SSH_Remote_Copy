@@ -19,7 +19,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access itt
       - name: Checkout the code
         uses: actions/checkout@v2
-        
+    #Coping from remote to local    
       - name: Operations
         uses: fifsky/ssh-action@master
         with:
