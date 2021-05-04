@@ -21,4 +21,4 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Operations
-      run: scp -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@3.140.249.25:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
+      run: scp -i C:\Users\trbor\Downloads\POC_AWS.pem ec2-user@18.219.65.137:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions
