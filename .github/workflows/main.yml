@@ -20,11 +20,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access itt
       - name: Checkout the code
         uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Copy folder content from remote
-        run: 
-            ssh-keygen -y -f ${{ secrets.SSH_PRIVATE_KEY }};
-            scp -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@18.219.65.137:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
+        
+      - name: Operations
+        uses: fifsky/ssh-action@master
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: 3.140.249.25
+          port: 22
+          user: ec2-user
+          command: scp -i ${{ secrets.SSH_PRIVATE_KEY }} ec2-user@18.219.65.137:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
        
+    
        
