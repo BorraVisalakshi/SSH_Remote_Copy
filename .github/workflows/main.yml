@@ -21,4 +21,4 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Operations
-      run: scp -i C:\Users\trbor\Downloads\POC_AWS.pem ec2-user@3.129.52.149:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions
+      run: scp -i C:\Users\trbor\Downloads\POC_AWS.pem ec2-user@3.129.52.149:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
