@@ -19,6 +19,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access itt
     - name: Checkout the code
       uses: actions/checkout@v2
-      
+                  
+                  
     - name: Operations
-      run: scp -i C:\Users\trbor\Downloads\POC_AWS.pem ec2-user@3.129.52.149:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
+      run: scp -o  StrictHostKeyChecking=no -q -i C:\Users\trbor\Downloads\POC_AWS.pem ec2-user@3.136.87.39:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
