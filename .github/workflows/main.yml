@@ -22,4 +22,4 @@ jobs:
                   
   #Copy to local from remote         
     - name: Copy to local      
-      run: scp -o  StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.HOST }}@${{ secrets.USER }}:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
+      run: scp -o  StrictHostKeyChecking=no -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.USER }}@${{ secrets.HOST }}:/home/ec2-user/GitHub_Actions/SubmissionDataForm-0.0.1-SNAPSHOT.jar D:\Actions\
